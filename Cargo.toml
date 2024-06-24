@@ -1,0 +1,33 @@
+[package]
+name = "oxygen"
+version = "0.1.0"
+authors = ["Luracasmus"]
+edition = "2021"
+rust-version = "1.79.0"
+description = "Convenient Rust Crate package manager using Rustup and Cargo"
+keywords = ["crate", "install", "package", "update"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+ron = "0.9.0-alpha.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[build-dependencies]
+embed-manifest = "1.4.0"
+
+[profile.release]
+lto = "thin"
+strip = "symbols"
+codegen-units = 1
+
+[profile.release.package."*"]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+strip = "symbols"
+codegen-units = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+codegen-units = 1
