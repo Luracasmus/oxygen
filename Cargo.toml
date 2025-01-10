@@ -3,7 +3,7 @@ name = "oxygen"
 version = "0.1.0"
 authors = ["Luracasmus"]
 edition = "2021"
-rust-version = "1.79.0"
+rust-version = "1.84.0"
 description = "Convenient Rust Crate package manager using Rustup and Cargo"
 keywords = ["crate", "install", "package", "update"]
 categories = ["command-line-utilities"]
@@ -11,6 +11,7 @@ categories = ["command-line-utilities"]
 [dependencies]
 ron = "0.9.0-alpha.0"
 serde = { version = "1.0", features = ["derive"] }
+windows = { version = "0.59.0", features = ["Win32_System_Console"] }
 
 [build-dependencies]
 embed-manifest = "1.4.0"
